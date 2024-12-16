@@ -1,0 +1,18 @@
+{
+  "data": [
+    {
+      "id": 67,
+      "parent_id": 28,
+      "level": 3,
+      "is_deepest": true,
+      "name": "Antennas",
+      "handle": "antennas",
+      "label": null,
+      "page_order": null,
+      "bar_order": 5,
+      "image_url": null,
+      "description": null,
+      "bar_flat_view": null
+    }
+  ]
+}
