@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="150">
-  <a xlink:href="https://evil.com/phish">
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="300" height="150">
+  <a xlink:href="https://example.com">
     <rect x="10" y="10" width="280" height="130" rx="15" fill="red"/>
-    <text x="60" y="90" font-size="24" fill="white">Click here to verify</text>
+    <text x="60" y="90" font-size="24" fill="white">Click here</text>
   </a>
 </svg>
