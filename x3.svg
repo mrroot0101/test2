@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE testingxxe [ <!ENTITY xml "POC for Static Entities Allowed">]>
-<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
-<text x="0" y="20" font-size="20">&xml;</text>
+<!DOCTYPE testingxxe [ 
+<!ENTITY xml1 "This is my first message">
+<!ENTITY xml2 "&xml1";>
+]>
+<text x="0" y="20" font-size="20">&xml2;</text>
 </svg>
