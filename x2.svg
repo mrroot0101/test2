@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
   <style>
     @import url('https://adhoc-bugcrowd-studio.cdn-code.org/v3/files/F23evyL6gUxhZdMPFBHrJQ/code.css');
   </style>
+
+  <foreignObject width="100%" height="100%">
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Hello from SVG with a body!</p>
+    </body>
+  </foreignObject>
 </svg>
